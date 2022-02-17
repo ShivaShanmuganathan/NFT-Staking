@@ -51,6 +51,15 @@ describe("NFT Staker", function () {
 
     });
 
+    it("Should test unstaking function in staker contract", async function () {
+      
+      console.log("Balance Of Owner For Token 0->", (await nft.balanceOf(owner.address, 0)).toString());
+      await staker.connect(owner).unstake(nftContractAddress);
+      console.log("Balance Of Contract For Token 0->", (await nft.balanceOf(stakerContractAddress, 0)).toString());
+      console.log("Balance Of Owner After Unstaking For Token 0->", (await nft.balanceOf(owner.address, 0)).toString());
+
+    });
+
   });
 
   
