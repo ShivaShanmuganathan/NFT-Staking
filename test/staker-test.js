@@ -29,7 +29,20 @@ describe("NFT Staker", function () {
     
   });
 
-  
+  it("Should deploy Staker contract", async function () {
+
+    const nft_staker = await ethers.getContractFactory("NftStaker");
+    const staker = await nft_staker.deploy();
+    await staker.deployed();
+    const stakerContractAddress = staker.address;
+
+    console.log(owner.address, " Deployer Address");
+    // console.log("Balance Of Owner For Token 0->", (await nft.balanceOf(owner.address, 0)).toString());
+    // console.log("Balance Of Owner For Token 1->", (await nft.balanceOf(owner.address, 1)).toString());
+    // console.log("Balance Of Owner For Token 2->", (await nft.balanceOf(owner.address, 2)).toString());
+    // console.log("Balance Of Owner For Token 3->", (await nft.balanceOf(owner.address, 3)).toString());
+    
+  });
 
   
 });
