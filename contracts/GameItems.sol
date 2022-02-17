@@ -30,4 +30,5 @@ contract GameItems is ERC1155, Ownable {
         require(bytes(_uris[tokenId]).length == 0, "Cannot set uri twice"); 
         _uris[tokenId] = uri; 
     }
+
 }
